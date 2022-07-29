@@ -102,13 +102,7 @@ class WebDriver(Session, Navigation):
         self.context_instance = ContextsApi(self.api_client)
         self.screenshot_instance = ScreenshotsApi(self.api_client)
 
-    def get(self, url: str) -> WebDriver:
-        """ Navigates to url"""
-        self.navi_instance.navigate_to(session_id=self.session_id, body=UrlRequest(url=url, ))
-        return self
-
     def get_page_source(self) -> str:
-
         return self.document_instance.get_page_source(session_id=self.session_id).value
 
     def screen_shot(self) -> str:
