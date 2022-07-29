@@ -27,15 +27,7 @@ jobs:
     - name: Install dependencies
       working-directory: .
       run: |
-        python -m pip install --upgrade pip
-        pip install flake8==4.0.1
-        pip install isort
-        pip install pytest==7.1.0
-        pip install pydantic==1.9.1
-        pip install testcontainers==3.6.0
-        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-    - name: Check imports with isort
-      run: isort $(git ls-files '*.py')
+        CI/setter.sh
     - name: Check with flake8
       run: flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
     - name: Test with pytest
