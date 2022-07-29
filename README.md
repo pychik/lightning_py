@@ -1,6 +1,14 @@
 
 # lightning_py
 python client for &lt;selenium> driver
+<p align="left">
+    <a href="https://www.python.org/" target="blank">
+        <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" />
+    </a>
+    <a href="https://swagger.io/" target="blank">
+        <img src="https://img.shields.io/badge/Swagger-23000.svg?style=for-the-badge&logo=swagger&logoColor=white"/>
+    </a>
+</p>
 * Features at the moment
   * WebDriver class made with inheritance to Session and Navigate classes- as attempt to divide this Api's
   * ContextApi, DocumentsApi, ScreenshotsApi represented as instances without dividing there methods
