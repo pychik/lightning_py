@@ -1,0 +1,5 @@
+certifi==2022.6.15
+python-dateutil==2.8.2
+six==1.16.0
+# swagger-client==1.0.0
+urllib3==1.26.11
