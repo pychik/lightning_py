@@ -9,6 +9,7 @@ python client for &lt;selenium> driver
         <img src="https://img.shields.io/badge/Swagger-23000.svg?style=for-the-badge&logo=swagger&logoColor=white"/>
     </a>
 </p>
+
 * Features at the moment
   * WebDriver class made with inheritance to Session and Navigate classes- as attempt to divide this Api's
   * ContextApi, DocumentsApi, ScreenshotsApi represented as instances without dividing there methods
