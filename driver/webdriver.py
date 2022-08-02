@@ -51,6 +51,9 @@ class Session:
         """Finishes the session action"""
         self.session_instance.delete_session(session_id=self.session_id)
 
+        # activate ApiClient ThreadPool Connections to finish
+        self.api_client.__del__()
+
 
 class Navigation:
     """Defines Navigation Api"""
@@ -65,6 +68,9 @@ class Navigation:
         """ Navigates to url"""
         self.navi_instance.navigate_to(session_id=self.session_id, body=UrlRequest(url=url, ))
         return self
+
+    def get_title(self) -> str:
+        return self.navi_instance.get_page_title(session_id=self.session_id).value
 
     def current_url(self) -> str:
         """Returns: str"""
