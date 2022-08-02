@@ -10,9 +10,9 @@ python client for &lt;selenium> driver
         <img src="https://img.shields.io/badge/Swagger-23000.svg?style=for-the-badge&logo=swagger&logoColor=white"/>
     </a>
 </p>
-<p>
+<p align="left">
     <a href="https://aerokube.com/selenoid/" target="blank">
-        <img src="/images/ac_logo.png" width="50"/>
+        <img src="/images/ac_logo.png" width="55"/>
     </a>
 </p>
 
