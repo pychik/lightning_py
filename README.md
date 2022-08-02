@@ -9,12 +9,11 @@ python client for &lt;selenium> driver
     <a href="https://swagger.io/" target="blank">
         <img src="https://img.shields.io/badge/Swagger-23000.svg?style=for-the-badge&logo=swagger&logoColor=white"/>
     </a>
-</p>
-<p align="left">
     <a href="https://aerokube.com/selenoid/" target="blank">
         <img src="/images/ac_logo.png" width="55"/>
     </a>
 </p>
+
 
 * Features at the moment
   * WebDriver class made with inheritance to Session and Navigate classes- as attempt to divide this Api's
