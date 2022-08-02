@@ -1,13 +1,13 @@
 
 # lightning_py
 python client for &lt;selenium> driver
-![GitHub Logo](/images/ac_logo.png)
+
 <p align="left">
     <a href="https://www.python.org/" target="blank">
         <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" />
     </a>
-    <a href="https://swagger.io/" target="blank">
-        <img src="https://img.shields.io/badge/Selenoid-23000.svg?style=for-the-badge&logo=selenoid&logoColor=white"/>
+    <a href="https://aerokube.com/selenoid/" target="blank">
+        <img src="/images/ac_logo.png" width="50"/>
     </a>
     <a href="https://swagger.io/" target="blank">
         <img src="https://img.shields.io/badge/Swagger-23000.svg?style=for-the-badge&logo=swagger&logoColor=white"/>
