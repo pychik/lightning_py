@@ -12,9 +12,9 @@ cd swagger-codegen
 git checkout 3.0.0
 mvn clean package
 java -jar modules/swagger-codegen-cli/target/swagger-codegen-cli.jar generate \
-   -i swagger.yaml \
+   -i /home/runner/work/lightning_py/lightning_py/swagger.yaml \
    -l python \
-   -o /python
+   -o /home/runner/work/lightning_py/lightning_py/python
 ls
 pwd
-cd python && python setup.py install && cd ..
+cd /home/runner/work/lightning_py/lightning_py/python && python setup.py install && cd ..
