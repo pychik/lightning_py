@@ -41,7 +41,7 @@ class Session:
         self.capabilities = capabilities
         self.session_instance = SessionsApi(api_client)
 
-    def _get_session(self) -> tuple[Optional[dict], Optional[str]]:
+    def _get_session(self) -> tuple[dict, Optional[str]]:
         body = NewSessionRequest(NewSessionRequestCapabilities(always_match=self.capabilities))
         session_response = self.session_instance.create_session(body)
         # log.info(f"Webdriver started new session with parameters: {session_response.value}")
@@ -50,9 +50,6 @@ class Session:
     def close(self) -> None:
         """Finishes the session action"""
         self.session_instance.delete_session(session_id=self.session_id)
-
-        # activate ApiClient ThreadPool Connections to finish
-        self.api_client.__del__()
 
 
 class Navigation:

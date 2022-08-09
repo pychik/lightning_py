@@ -30,7 +30,7 @@ jobs:
         chmod +x CI/setter.sh
         CI/setter.sh
     - name: Check with flake8
-      run: flake8 driver/ --count --select=E9,F63,F7,F82 --show-source --statistics
+      run: flake8 driver/ --count --select=E9,F63,F7,F82,E302,W391,W292 --show-source --statistics
     - name: Test with pytest
       run: |
         pytest tests/
