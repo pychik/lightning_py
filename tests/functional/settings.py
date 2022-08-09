@@ -8,4 +8,5 @@ class TestSetting(BaseSettings):
         "moz:debuggerAddress": True,
         }
 
+
 settings = TestSetting()
