@@ -1,6 +1,6 @@
 python -m pip install --upgrade pip
 pip install flake8==4.0.1
-pip install pytest==7.1.0
+pip install pytest==7.1.2
 pip install pydantic==1.9.1
 pip install testcontainers==3.6.0
 if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
