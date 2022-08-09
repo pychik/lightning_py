@@ -1,0 +1,4 @@
+swagger-client==1.0.0
+pytest==6.1.2
+pydantic==1.9.1
+testcontainers==3.6.0

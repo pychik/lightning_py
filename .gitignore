@@ -43,6 +43,8 @@ venv/
 
 # My files
 lightning_py/python/
+example_lightning.py
+playing_tc.py
 tests_raw.py
 tests_sw_api.py
 support.py
