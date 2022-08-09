@@ -1,4 +1,3 @@
-cd ..
 python -m pip install --upgrade pip
 pip install flake8==4.0.1
 pip install pytest==7.1.0
@@ -17,5 +16,5 @@ java -jar modules/swagger-codegen-cli/target/swagger-codegen-cli.jar generate \
    -l python \
    -o /python
 ls
-
+pwd
 cd python && python setup.py install && cd ..
