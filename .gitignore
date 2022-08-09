@@ -42,7 +42,6 @@ venv/
 .idea/
 
 # My files
-lightning_py/python/
 gen_6/
 example_lightning.py
 playing_tc.py
