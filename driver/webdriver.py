@@ -51,9 +51,6 @@ class Session:
         """Finishes the session action"""
         self.session_instance.delete_session(session_id=self.session_id)
 
-        # activate ApiClient ThreadPool Connections to finish
-        self.api_client.__del__()
-
 
 class Navigation:
     """Defines Navigation Api"""
