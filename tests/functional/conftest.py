@@ -17,6 +17,8 @@ def event_loop():
     yield loop
 
     loop.close()
+
+    
 @pytest.fixture(scope='session')
 def settings() -> TestSetting:
     return TestSetting()
@@ -41,5 +43,4 @@ def selenoid_client(settings):
     c = connect()
     yield c
     c.close()
-    # sleep(1)
     firefox.stop()
