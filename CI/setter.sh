@@ -5,6 +5,7 @@ pip install pydantic==1.9.1
 pip install testcontainers==3.6.0
 if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
+cd /home/runner/work/lightning_py/lightning_py
 curl -O https://raw.githubusercontent.com/aerokube/selenium-openapi/master/selenium.yaml
 
 git clone https://github.com/swagger-api/swagger-codegen
