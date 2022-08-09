@@ -17,6 +17,5 @@ java -jar modules/swagger-codegen-cli/target/swagger-codegen-cli.jar generate \
    -l python \
    -o /home/runner/work/lightning_py/lightning_py/python
 cd /home/runner/work/lightning_py/lightning_py
-ls
-pwd
 cd /home/runner/work/lightning_py/lightning_py/python && python setup.py install && cd ..
+ls && pwd
