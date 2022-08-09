@@ -16,5 +16,6 @@ java -jar modules/swagger-codegen-cli/target/swagger-codegen-cli.jar generate \
    -i swagger.yaml \
    -l python \
    -o /python
+ls
 
-cd python/ && python setup.py install && cd ..
+cd python && python setup.py install && cd ..
