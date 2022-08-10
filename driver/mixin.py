@@ -2,6 +2,7 @@ class Common:
     @property
     def session_id(self):
         return self._wd.session_id
+
     @property
     def navigation(self):
         return self._wd.navigation
