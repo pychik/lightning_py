@@ -1,4 +1,12 @@
 from __future__ import annotations
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from .context import Context
+    from .document import Document
+    from .navigation import Navigation
+    from .screenshot import ScreenShot
+    from .sessions import Sessions
 
 
 class Common:
@@ -23,5 +31,5 @@ class Common:
         return self._wd.screenshot
 
     @property
-    def context(self):
+    def context(self) -> Context:
         return self._wd.context

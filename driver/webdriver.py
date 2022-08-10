@@ -1,5 +1,3 @@
-from __future__ import annotations
-
 import logging as log
 
 from swagger_client import ApiClient, Configuration
