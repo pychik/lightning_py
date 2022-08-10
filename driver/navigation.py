@@ -4,8 +4,10 @@ from swagger_client.api.navigation_api import NavigationApi
 from swagger_client.models.empty_request import EmptyRequest
 from swagger_client.models.url_request import UrlRequest
 
+from .mixin import Common
 
-class Navigation:
+
+class Navigation(Common):
     """Defines Navigation Api"""
 
     def __init__(self,  wd):
@@ -34,28 +36,3 @@ class Navigation:
         """Navigates to next page"""
         self._navi_instance.navigate_forward(session_id=self.session_id, body=EmptyRequest())
         return self
-
-    # common part of all classes
-    @property
-    def session_id(self):
-        return self._wd.session_id
-
-    @property
-    def navigation(self) -> Navigation:
-        return self
-
-    @property
-    def sessions(self):
-        return self._wd.sessions
-
-    @property
-    def document(self):
-        return self._wd.document
-
-    @property
-    def screenshot(self):
-        return self._wd.screenshot
-
-    @property
-    def context(self):
-        return self._wd.context

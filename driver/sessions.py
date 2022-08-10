@@ -5,8 +5,10 @@ from swagger_client.api.sessions_api import SessionsApi
 from swagger_client.models.new_session_request import NewSessionRequest
 from swagger_client.models.new_session_request_capabilities import NewSessionRequestCapabilities
 
+from .mixin import Common
 
-class Sessions:
+
+class Sessions(Common):
     def __init__(self, wd):
         self.capabilities = wd.capabilities
         self._session_instance = SessionsApi(wd.api_client)
@@ -32,24 +34,3 @@ class Sessions:
 
         self._session_instance.delete_session(session_id=self.session_id)
         print(self.session_id, "closed")
-
-    # common part
-    @property
-    def navigation(self):
-        return self._wd.navigation
-
-    @property
-    def sessions(self) -> Sessions:
-        return self
-
-    @property
-    def document(self):
-        return self._wd.document
-
-    @property
-    def screenshot(self):
-        return self._wd.screenshot
-
-    @property
-    def context(self):
-        return self._wd.context

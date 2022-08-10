@@ -26,18 +26,19 @@ class Api:
 
 class WebDriver:
 
-    _session_id: str
-    _navigation: Navigation
-    _sessions: Sessions
-    _document: Document
-    _screenshot: ScreenShot
-    _context: Context
+    # _session_id: str
+    # _navigation: Navigation
+    # _sessions: Sessions
+    # _document: Document
+    # _screenshot: ScreenShot
+    # _context: Context
 
     def __init__(self, base_uri: str = Defaults.BASE_URI, capabilities: Capabilities = Defaults.CAPABILITIES):
         # get our api_client
         api = Api(base_uri)
         self.api_client = api.api_client
         self.capabilities = capabilities
+
         self._sessions = Sessions(wd=self)
 
         self._navigation = Navigation(wd=self)
