@@ -1,22 +1,25 @@
+from __future__ import annotations
+
+
 class Common:
     @property
-    def session_id(self):
+    def session_id(self) -> str:
         return self._wd.session_id
 
     @property
-    def navigation(self):
+    def navigation(self) -> Navigation:
         return self._wd.navigation
 
     @property
-    def sessions(self):
+    def sessions(self) -> Sessions:
         return self._wd.sessions
 
     @property
-    def document(self):
+    def document(self) -> Document:
         return self._wd.document
 
     @property
-    def screenshot(self):
+    def screenshot(self) -> ScreenShot:
         return self._wd.screenshot
 
     @property
