@@ -68,17 +68,3 @@ class WebDriver:
     @property
     def context(self) -> Context:
         return self._context
-
-
-
-
-
-
-
-
-
-
-
-
-
-
