@@ -42,5 +42,5 @@ def selenoid_client(settings):
         return client
     c = connect()
     yield c
-    c.close()
+    c.sessions.close()
     firefox.stop()
