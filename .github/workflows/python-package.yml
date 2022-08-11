@@ -24,13 +24,8 @@ jobs:
       uses: actions/setup-python@v3
       with:
         python-version: ${{ matrix.python-version }}
-    - name: Install dependencies
+    - name: Install dependencies, Checking with flake8, testing with pytest
       working-directory: .
       run: |
         chmod +x ci/setter.sh
         ci/setter.sh
-    - name: Check with flake8
-      run: flake8 driver/ --count --select=E9,F63,F7,F82,E302,W391,W292 --show-source --statistics
-    - name: Test with pytest
-      run: |
-        pytest tests/

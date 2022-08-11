@@ -1,39 +1,33 @@
 import logging as log
 
-from swagger_client import ApiClient, Configuration
+
 
 from .capabilities import Capabilities
 from .config import Defaults
 from .context import Context
 from .document import Document
 from .navigation import Navigation
-from .screenshot import ScreenShot
+from .screenshot import Screenshot
 from .sessions import Sessions
 from .timeouts import Timeouts
 
 log.basicConfig(level=log.DEBUG)
 
 
-class Api:
-    """Our main class swagger worker api"""
-    def __init__(self, base_uri: str):
-        configuration = Configuration()
-        configuration.host = base_uri
-        self.api_client = ApiClient(configuration)
+
 
 
 class WebDriver:
     """WebDriver class uniting all W3C classes and there methods"""
 
-    def __init__(self, base_uri: str = Defaults.BASE_URI, capabilities: Capabilities = Defaults.CAPABILITIES):
-        api = Api(base_uri)
-        self.api_client = api.api_client
+    def __init__(self, base_uri: str, capabilities: Capabilities):
+        self.base_uri = base_uri
         self.capabilities = capabilities
 
         self._sessions = Sessions(wd=self)
         self._navigation = Navigation(wd=self)
         self._document = Document(wd=self)
-        self._screenshot = ScreenShot(wd=self)
+        self._screenshot = Screenshot(wd=self)
         self._context = Context(wd=self)
         self._timeouts = Timeouts(wd=self)
 
@@ -54,7 +48,7 @@ class WebDriver:
         return self._document
 
     @property
-    def screenshot(self) -> ScreenShot:
+    def screenshot(self) -> Screenshot:
         return self._screenshot
 
     @property

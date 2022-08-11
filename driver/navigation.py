@@ -11,8 +11,8 @@ class Navigation(Common):
     """Defines Navigation Api"""
 
     def __init__(self,  wd):
-        self._navi_instance = NavigationApi(wd.api_client)
-        self._wd = wd
+        super().__init__(wd)
+        self._navi_instance = NavigationApi(self._api_client)
 
     # Navigation class spec methods
     def navigate(self, url: str) -> Navigation:

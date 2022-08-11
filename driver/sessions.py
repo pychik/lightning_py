@@ -10,9 +10,9 @@ from .mixin import Common
 
 class Sessions(Common):
     def __init__(self, wd):
-        self.capabilities = wd.capabilities
-        self._session_instance = SessionsApi(wd.api_client)
-        self._wd = wd
+        super().__init__(wd)
+        self._session_instance = SessionsApi(self._api_client)
+
         self._session_response, self._session_id = self._get_session()
 
     @property
@@ -20,7 +20,8 @@ class Sessions(Common):
         return self._session_id
 
     def _get_session(self) -> Tuple[dict, Optional[str]]:
-        body = NewSessionRequest(NewSessionRequestCapabilities(always_match=self.capabilities))
+        """Starts the session"""
+        body = NewSessionRequest(NewSessionRequestCapabilities(always_match=self._wd.capabilities))
         session_response = self._session_instance.create_session(body)
         # log.info(f"Webdriver started new session with parameters: {session_response.value}")
         return session_response.value, session_response.value.session_id

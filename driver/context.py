@@ -7,8 +7,8 @@ from .mixin import Common
 
 class Context(Common):
     def __init__(self, wd):
-        self._context_instance = ContextsApi(wd.api_client)
-        self._wd = wd
+        super().__init__(wd)
+        self._context_instance = ContextsApi(self._api_client)
 
     def close_window(self) -> Context:
         """Closes browser window"""

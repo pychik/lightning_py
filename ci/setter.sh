@@ -15,12 +15,16 @@ wget https://repo1.maven.org/maven2/io/swagger/codegen/v3/swagger-codegen-cli/3.
 ls && pwd
 mvn clean package
 java -jar swagger-codegen-cli.jar generate \
-   -i /home/runner/work/lightning_py/lightning_py/selenium.yaml \
+#   -i /home/runner/work/lightning_py/lightning_py/selenium.yaml \
+  -i selenium.yaml \
    -l python \
-   -o /home/runner/work/lightning_py/lightning_py/python
+   -o python
 ls && pwd
-cd /home/runner/work/lightning_py/lightning_py
+#cd /home/runner/work/lightning_py/lightning_py
 
 # setup swagger API
-cd /home/runner/work/lightning_py/lightning_py/python && python setup.py install && cd ..
-ls && pwd
+pushd python/ && python setup.py install && cd ..
+# checking code with flake8
+flake8 driver/ --count --select=E9,F63,F7,F82,E302,W391,W292 --show-source --statistics
+# testing code
+pytest tests/

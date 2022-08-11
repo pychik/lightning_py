@@ -6,7 +6,7 @@ from tests.functional.settings import TestSetting
 from testcontainers.selenium import BrowserWebDriverContainer
 from testcontainers.core.waiting_utils import wait_container_is_ready
 from time import sleep
-from driver import WebDriver
+from driver import WebDriver, Defaults
 
 
 # https://github.com/pytest-dev/pytest-asyncio/issues/171
@@ -36,9 +36,9 @@ def selenoid_client(settings):
     @wait_container_is_ready(urllib3.exceptions.HTTPError)
     def connect():
         base_uri = firefox.get_connection_url()
-        client = WebDriver(base_uri=base_uri)
+        client = WebDriver(base_uri=base_uri, capabilities=Defaults.CAPABILITIES)
         return client
+
     c = connect()
     yield c
-    sleep(5)
-
+    sleep(1)

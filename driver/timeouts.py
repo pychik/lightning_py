@@ -9,10 +9,9 @@ from .mixin import Common
 
 class Timeouts(Common):
     def __init__(self, wd):
-        self._wd = wd
-        self._timeouts_instance = TimeoutsApi(self._wd.api_client)
+        super().__init__(wd)
+        self._timeouts_instance = TimeoutsApi(self._api_client)
         self._timeouts: TimeoutsModel = self.timeouts
-
 
     @property
     def timeouts(self):
