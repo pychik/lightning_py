@@ -16,9 +16,9 @@ ls && pwd
 mvn clean package
 java -jar swagger-codegen-cli.jar generate \
 #   -i /home/runner/work/lightning_py/lightning_py/selenium.yaml \
-  -i selenium.yaml \
+  -i $ pwd /selenium.yaml \
    -l python \
-   -o python
+   -o $ pwd /python
 ls && pwd
 #cd /home/runner/work/lightning_py/lightning_py
 
