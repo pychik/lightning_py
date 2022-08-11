@@ -15,11 +15,10 @@ wget https://repo1.maven.org/maven2/io/swagger/codegen/v3/swagger-codegen-cli/3.
 ls && pwd
 mvn clean package
 java -jar swagger-codegen-cli.jar generate \
-#   -i /home/runner/work/lightning_py/lightning_py/selenium.yaml \
-  -i $ pwd /selenium.yaml \
+   -i /home/runner/work/lightning_py/lightning_py/selenium.yaml \
    -l python \
-   -o $ pwd /python
-ls && pwd
+   -o /home/runner/work/lightning_py/lightning_py/python
+
 #cd /home/runner/work/lightning_py/lightning_py
 
 # setup swagger API
