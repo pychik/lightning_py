@@ -10,5 +10,6 @@ class TestSimple:
                    .back().get_title() == "Google"
         assert selenoid_client.navigation.forward().get_title() == "Py_lightning test page"
 
+
     def test_screenshot(self, selenoid_client):
         assert len(selenoid_client.navigation.navigate('http://google.com').screenshot.take()) > 50
