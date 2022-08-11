@@ -5,7 +5,7 @@ from asyncio import get_event_loop_policy
 from tests.functional.settings import TestSetting
 from testcontainers.selenium import BrowserWebDriverContainer
 from testcontainers.core.waiting_utils import wait_container_is_ready
-
+from time import sleep
 from driver import WebDriver
 
 
@@ -40,4 +40,5 @@ def selenoid_client(settings):
         return client
     c = connect()
     yield c
-    firefox.stop()
+    sleep(1)
+
