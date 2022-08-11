@@ -7,6 +7,7 @@ if TYPE_CHECKING:
     from .navigation import Navigation
     from .screenshot import ScreenShot
     from .sessions import Sessions
+    from .timeouts import Timeouts
 
 
 class Common:
@@ -33,3 +34,7 @@ class Common:
     @property
     def context(self) -> Context:
         return self._wd.context
+
+    @property
+    def timeouts(self) -> Timeouts:
+        return self._wd.timeouts

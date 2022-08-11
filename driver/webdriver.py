@@ -9,7 +9,7 @@ from .document import Document
 from .navigation import Navigation
 from .screenshot import ScreenShot
 from .sessions import Sessions
-
+from .timeouts import Timeouts
 
 log.basicConfig(level=log.DEBUG)
 
@@ -35,10 +35,11 @@ class WebDriver:
         self._document = Document(wd=self)
         self._screenshot = ScreenShot(wd=self)
         self._context = Context(wd=self)
+        self._timeouts = Timeouts(wd=self)
 
     @property
     def session_id(self) -> str:
-        return self._sessions.session_id
+        return self._sessions.id
 
     @property
     def navigation(self) -> Navigation:
@@ -59,3 +60,7 @@ class WebDriver:
     @property
     def context(self) -> Context:
         return self._context
+
+    @property
+    def timeouts(self) -> Timeouts:
+        return self._timeouts

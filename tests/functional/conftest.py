@@ -40,5 +40,5 @@ def selenoid_client(settings):
         return client
     c = connect()
     yield c
-    sleep(1)
+    sleep(5)
 

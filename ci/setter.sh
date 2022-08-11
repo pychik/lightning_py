@@ -7,7 +7,8 @@ cd /home/runner/work/lightning_py/lightning_py
 curl -O https://raw.githubusercontent.com/aerokube/selenium-openapi/master/selenium.yaml
 
 # install swagger codegen
-git clone https://github.com/swagger-api/swagger-codegen
+#git clone https://github.com/swagger-api/swagger-codegen
+wget https://repo1.maven.org/maven2/io/swagger/codegen/v3/swagger-codegen-cli/3.0.34/swagger-codegen-cli-3.0.34.jar -O swagger-codegen-cli.jar
 cd swagger-codegen
 git checkout 3.0.0
 mvn clean package

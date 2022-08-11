@@ -16,7 +16,7 @@ class Sessions(Common):
         self._session_response, self._session_id = self._get_session()
 
     @property
-    def session_id(self):
+    def id(self):
         return self._session_id
 
     def _get_session(self) -> Tuple[dict, Optional[str]]:
@@ -29,8 +29,7 @@ class Sessions(Common):
     def status(self) -> dict:
         return self._session_instance.get_status().value
 
-    def close(self) -> None:
+    def delete(self) -> None:
         """Finishes the session action"""
 
         self._session_instance.delete_session(session_id=self.session_id)
-        print(self.session_id, "closed")
