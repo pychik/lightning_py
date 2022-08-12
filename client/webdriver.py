@@ -1,9 +1,6 @@
 import logging as log
 
-
-
 from .capabilities import Capabilities
-from .config import Defaults
 from .context import Context
 from .document import Document
 from .navigation import Navigation

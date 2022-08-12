@@ -6,7 +6,7 @@ from testcontainers.selenium import BrowserWebDriverContainer
 from testcontainers.core.waiting_utils import wait_container_is_ready
 from time import sleep
 
-from client import WebDriver, Defaults
+from client import WebDriver
 from tests.functional.config import settings
 
 
@@ -32,7 +32,7 @@ def selenoid_client():
     @wait_container_is_ready(urllib3.exceptions.HTTPError)
     def connect():
         base_uri = firefox.get_connection_url()
-        client = WebDriver(base_uri=base_uri, capabilities=Defaults.CAPABILITIES)
+        client = WebDriver(base_uri=base_uri, capabilities=settings.CAPABILITIES)
         return client
 
     c = connect()
