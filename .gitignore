@@ -42,8 +42,6 @@ venv/
 .idea/
 
 # My files
-
-gen_6/
 example_lightning.py
 playing_tc.py
 tests_raw.py

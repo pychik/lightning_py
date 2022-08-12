@@ -1,20 +1,7 @@
 from __future__ import annotations
 
-# import logging as log
-# from swagger_client.models.capabilities import Capabilities
-# from swagger_client.models.proxy import Proxy
-# from swagger_client.models.timeouts import Timeouts
-# from swagger_client.models.logging_prefs import LoggingPrefs
-# from swagger_client.models.chrome_options import ChromeOptions
-# from swagger_client.models.moon_options import MoonOptions
-# from swagger_client.models.firefox_options import FirefoxOptions
-# from swagger_client.models.edge_options import EdgeOptions
-# from swagger_client.models.opera_options import OperaOptions
-# from swagger_client.models.selenoid_options import SelenoidOptions
-#
-# from typing import Optional
-
 from .exceptions import CapsException
+
 
 class Capabilities(dict):
     attribute_map = {
@@ -59,4 +46,3 @@ class Capabilities(dict):
         for var_name, var_value in kwargs.items():
             if var_name in self.attribute_map:
                 self[self.attribute_map.get(var_name)] = var_value
-
