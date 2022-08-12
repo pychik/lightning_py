@@ -1,6 +1,6 @@
 # installing python test libraries
 python -m pip install --upgrade pip
-if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+if [ -f tests/requirements.txt ]; then pip install -r tests/requirements.txt; fi
 
 # download <swagger.yaml> file
 cd /home/runner/work/lightning_py/lightning_py
@@ -24,6 +24,6 @@ java -jar swagger-codegen-cli.jar generate \
 # setup swagger API
 pushd python/ && python setup.py install && cd ..
 # checking code with flake8
-flake8 driver/ --count --select=E9,F63,F7,F82,E302,W391,W292 --show-source --statistics
+flake8 client/ --count --select=E9,F63,F7,F82,E302,W391,W292 --show-source --statistics
 # testing code
-pytest tests/
+pytest tests/ -W ignore::DeprecationWarning

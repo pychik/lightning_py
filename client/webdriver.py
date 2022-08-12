@@ -14,9 +14,6 @@ from .timeouts import Timeouts
 log.basicConfig(level=log.DEBUG)
 
 
-
-
-
 class WebDriver:
     """WebDriver class uniting all W3C classes and there methods"""
 

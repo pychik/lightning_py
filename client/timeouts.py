@@ -24,6 +24,7 @@ class Timeouts(Common):
 
     @implicit_wait_timeout.setter
     def implicit_wait_timeout(self, value):
+        self._timeouts.implicit = value
         pass
 
     @property
@@ -32,7 +33,7 @@ class Timeouts(Common):
 
     @page_load_timeout.setter
     def page_load_timeout(self, value):
-        pass
+        self._timeouts.page_load = value
 
     @property
     def script_timeout(self):
@@ -40,10 +41,10 @@ class Timeouts(Common):
 
     @script_timeout.setter
     def script_timeout(self, value):
-        pass
+        self._timeouts.script = value
 
     def __repr__(self):
         return str(self.timeouts)
-# @property + @attribute.setter driver.timeouts().implicit_wait_timeout
-#  @property + @attribute.setter driver.timeouts().page_load_timeout
-#  @property + @attribute.setter driver.timeouts().script_timeout using Optional for getter
+# @property + @attribute.setter client.timeouts().implicit_wait_timeout
+#  @property + @attribute.setter client.timeouts().page_load_timeout
+#  @property + @attribute.setter client.timeouts().script_timeout using Optional for getter
