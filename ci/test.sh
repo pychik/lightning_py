@@ -21,4 +21,4 @@ pushd python/ && python setup.py install && cd ..
 flake8 client/ --count --select=E9,F63,F7,F82,E302,W391,W292 --show-source --statistics
 
 # testing code
-pytest tests/ -W ignore::DeprecationWarning
+pytest tests -W ignore::DeprecationWarning

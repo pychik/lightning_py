@@ -1,8 +1,7 @@
-class TestSimple:
+class TestSession:
 
-    def test_session(self, selenoid_client):
+    def test_session(self, firefox_client):
         # get session_id
-        assert len(selenoid_client.sessions.id) > 10
+        assert len(firefox_client.sessions.id) > 0
         # get session status ready
-        assert selenoid_client.sessions.status.ready == True
-
+        assert firefox_client.sessions.status.ready == True

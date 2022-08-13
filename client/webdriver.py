@@ -1,10 +1,7 @@
 import logging as log
 
-
-
 from .capabilities import Capabilities
-from .config import Defaults
-from .context import Context
+from .windows import Windows
 from .document import Document
 from .navigation import Navigation
 from .screenshot import Screenshot
@@ -25,7 +22,7 @@ class WebDriver:
         self._navigation = Navigation(wd=self)
         self._document = Document(wd=self)
         self._screenshot = Screenshot(wd=self)
-        self._context = Context(wd=self)
+        self._windows = Windows(wd=self)
         self._timeouts = Timeouts(wd=self)
 
     @property
@@ -49,8 +46,8 @@ class WebDriver:
         return self._screenshot
 
     @property
-    def context(self) -> Context:
-        return self._context
+    def windows(self) -> Windows:
+        return self._windows
 
     @property
     def timeouts(self) -> Timeouts:
