@@ -19,20 +19,18 @@ def event_loop():
 
 
 @pytest.fixture(scope='session')
-def selenoid_container():
-    with BrowserWebDriverContainer(settings.test_caps) as firefox:
+def firefox_container():
+    with BrowserWebDriverContainer(settings.TEST_CAPS_FF) as firefox:
         yield firefox
 
 
+# We can divide our client fixtures here - using different settings. Propose move this way..
 @pytest.fixture(scope='session')
-def selenoid_client():
-    firefox = BrowserWebDriverContainer(settings.TEST_CAPS)
-    firefox.start()
-
+def firefox_client(firefox_container):
     @wait_container_is_ready(urllib3.exceptions.HTTPError)
     def connect():
-        base_uri = firefox.get_connection_url()
-        client = WebDriver(base_uri=base_uri, capabilities=settings.CAPABILITIES)
+        base_uri = firefox_container.get_connection_url()
+        client = WebDriver(base_uri=base_uri, capabilities=settings.CAPABILITIES_FF)
         return client
 
     c = connect()
