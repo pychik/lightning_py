@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from swagger_client.api.document_api import DocumentApi
+from lightning_adapter.api.document_api import DocumentApi
 
 from .mixin import Common
 

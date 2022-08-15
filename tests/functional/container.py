@@ -1,6 +1,6 @@
 import urllib3
 
-from client import Capabilities, WebDriver
+from lightning import Capabilities
 from testcontainers.core.container import DockerContainer
 from testcontainers.core.waiting_utils import wait_container_is_ready
 from .config import settings
@@ -21,7 +21,7 @@ class SelenoidDriverContainer(DockerContainer):
 
     @wait_container_is_ready(urllib3.exceptions.HTTPError)
     def _connect(self):
-        from client import WebDriver
+        from lightning import WebDriver
         return WebDriver(base_uri=self._get_uri(), capabilities=self.capabilities)
 
     def _get_uri(self):

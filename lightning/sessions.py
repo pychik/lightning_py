@@ -1,9 +1,9 @@
 from __future__ import annotations
 
 from typing import Tuple, Optional
-from swagger_client.api.sessions_api import SessionsApi
-from swagger_client.models.new_session_request import NewSessionRequest
-from swagger_client.models.new_session_request_capabilities import NewSessionRequestCapabilities
+from lightning_adapter.api.sessions_api import SessionsApi
+from lightning_adapter.models.new_session_request import NewSessionRequest
+from lightning_adapter.models.new_session_request_capabilities import NewSessionRequestCapabilities
 
 from .mixin import Common
 
