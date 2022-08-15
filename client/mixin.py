@@ -3,7 +3,7 @@ from typing import TYPE_CHECKING
 from swagger_client import ApiClient, Configuration
 
 if TYPE_CHECKING:
-    from .context import Context
+    from .windows import Windows
     from .document import Document
     from .navigation import Navigation
     from .screenshot import Screenshot
@@ -28,9 +28,13 @@ class Api:
 class Common:
     def __init__(self, wd):
         # api init with Singleton mechanics
+        self._wd = wd
         api = Api(wd.base_uri)
         self._api_client = api.api_client
-        self._wd = wd
+
+    @property
+    def api_client(self) -> Api.api_client:
+        return self._api_client
 
     @property
     def session_id(self) -> str:
@@ -53,8 +57,8 @@ class Common:
         return self._wd.screenshot
 
     @property
-    def context(self) -> Context:
-        return self._wd.context
+    def windows(self) -> Windows:
+        return self._wd.windows
 
     @property
     def timeouts(self) -> Timeouts:

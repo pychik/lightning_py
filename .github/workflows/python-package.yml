@@ -27,5 +27,5 @@ jobs:
     - name: Install dependencies, Checking with flake8, testing with pytest
       working-directory: .
       run: |
-        chmod +x ci/setter.sh
-        ci/setter.sh
+        chmod +x ci/test.sh
+        ci/test.sh

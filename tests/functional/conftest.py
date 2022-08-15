@@ -2,12 +2,10 @@ import pytest
 import urllib3
 
 from asyncio import get_event_loop_policy
-from testcontainers.selenium import BrowserWebDriverContainer
-from testcontainers.core.waiting_utils import wait_container_is_ready
 from time import sleep
 
-from client import WebDriver, Defaults
-from tests.functional.config import settings
+from .container import SelenoidDriverContainer
+from .config import settings
 
 
 # https://github.com/pytest-dev/pytest-asyncio/issues/171
@@ -19,23 +17,9 @@ def event_loop():
 
 
 @pytest.fixture(scope='session')
-def selenoid_container():
-    with BrowserWebDriverContainer(settings.test_caps) as firefox:
-        yield firefox
+def firefox_client():
+    with SelenoidDriverContainer(capabilities=settings.Firefox.CAPABILITIES) as container:
+        yield container.get_driver()
 
-
-@pytest.fixture(scope='session')
-def selenoid_client():
-    firefox = BrowserWebDriverContainer(settings.TEST_CAPS)
-    firefox.start()
-
-    @wait_container_is_ready(urllib3.exceptions.HTTPError)
-    def connect():
-        base_uri = firefox.get_connection_url()
-        client = WebDriver(base_uri=base_uri, capabilities=Defaults.CAPABILITIES)
-        return client
-
-    c = connect()
-    yield c
     sleep(1)
     
