@@ -1,8 +1,7 @@
 from __future__ import annotations
 
-from typing import Tuple, Optional
-from swagger_client.api.timeouts_api import TimeoutsApi
-from swagger_client.models.timeouts import Timeouts as TimeoutsModel
+from lightning_adapter.api.timeouts_api import TimeoutsApi
+from lightning_adapter.models.timeouts import Timeouts as TimeoutsModel
 
 from .mixin import Common
 

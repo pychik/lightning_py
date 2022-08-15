@@ -9,19 +9,17 @@ python client for &lt;selenium> driver
     <a href="https://swagger.io/" target="blank">
         <img src="https://img.shields.io/badge/Swagger-23000.svg?style=for-the-badge&logo=swagger&logoColor=white"/>
     </a>
-    <a href="https://aerokube.com/selenoid/" target="blank">
-        <img src="/images/ac_logo.png" width="55"/>
-    </a>
 </p>
 
 
 * Features at the moment
-  * WebDriver class made with inheritance to Session and Navigate classes- as attempt to divide this Api's
-  * ContextApi, DocumentsApi, ScreenshotsApi represented as instances without dividing there methods
+  * realized in 100%
+    * sessions, timeouts
+  * partially realized
+    * screenshot, windows, document, navigation 
+
+* Python versions tested
+  * 3.8, 3.9, 3.10
 
 * Installing
-  * docker run -d --name swagger-editor -p 8080:8080 swaggerapi/swagger-editor (generate code)
-    * python -m venv venv (creating vitual environment)
-    * cd "folder with setup.py" && python setup.py install" 
-    * cd "main folder"
-    * python test_lightning_api.py
+  * pip install -i https://test.pypi.org/simple/ lightning-py
