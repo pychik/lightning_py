@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from base64 import b64decode
-from swagger_client.api.screenshots_api import ScreenshotsApi
+from lightning_adapter.api.screenshots_api import ScreenshotsApi
 
 from .mixin import Common
 

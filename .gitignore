@@ -42,9 +42,13 @@ venv/
 .idea/
 
 # My files
+example_adapter.py
 example_lightning.py
 playing_tc.py
 tests_raw.py
 tests_sw_api.py
+pyproject.toml
 support.py
+swagger-codegen-cli.jar
+generated/
 python/

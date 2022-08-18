@@ -1,5 +1,5 @@
 import pytest
-import urllib3
+
 
 from asyncio import get_event_loop_policy
 from time import sleep
