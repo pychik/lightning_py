@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from swagger_client.api.contexts_api import ContextsApi
+from lightning_adapter.api.contexts_api import ContextsApi
 
 from .mixin import Common
 

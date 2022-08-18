@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import TYPE_CHECKING
-from swagger_client import ApiClient, Configuration
+from lightning_adapter import ApiClient, Configuration
 
 if TYPE_CHECKING:
     from .windows import Windows
