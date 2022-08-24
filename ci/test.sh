@@ -1,5 +1,6 @@
 # installing python test libraries
 python -m pip install --upgrade pip
+
 if [ -f tests/requirements.txt ]; then pip install -r tests/requirements.txt; fi
 
 cd /home/runner/work/lightning_py/lightning_py
