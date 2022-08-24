@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "lightning_py"
-dynamic = ["version"]
+version = "0.0.1"
 authors = [
   { name="Cherniakov Igor", email="gendalf.grey2014@yandex.ru" },
 ]

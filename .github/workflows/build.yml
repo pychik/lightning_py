@@ -11,7 +11,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v3
         with:
           python-version: '3.x'
       - name: Install dependencies making tests
@@ -19,5 +19,6 @@ jobs:
         run: ci/test.sh
       - name: Build package
         run: |
-          python -m pip install --upgrage build
+          mv ci/build.toml pyproject.toml
+          python -m pip install --upgrade build
           python -m build

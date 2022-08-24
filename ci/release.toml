@@ -1,0 +1,32 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "lightning_py"
+dynamic = ["version"]
+authors = [
+  { name="Cherniakov Igor", email="gendalf.grey2014@yandex.ru" },
+]
+description = "A driver package for Selenoid"
+readme = "README.md"
+license = { file="LICENSE" }
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: Apache Software License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/pychik/lightning_py"
+"Bug Tracker" = "https://github.com/pychik/lightning_py/issues"
+
+[tool.hatch.version]
+path = "about_version.py"
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["lightning","generated/lightning_adapter"]
