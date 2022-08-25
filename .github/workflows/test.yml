@@ -23,6 +23,10 @@ jobs:
         python-version: ${{ matrix.python-version }}
     - name: Install dependencies, Checking with flake8, testing with pytest
       working-directory: .
-      run: |
-        chmod +x ci/test.sh
-        ci/test.sh
+      run: ci/test.sh
+    - name: Upload coverage
+      uses: codecov/codecov-action@v1.2.1
+      with:
+        token: ${{ secrets.CODE_COV_TOKEN }}
+        file: coverage.xml
+        fail_ci_if_error: true
