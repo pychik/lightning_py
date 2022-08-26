@@ -17,6 +17,12 @@ jobs:
       - name: Install dependencies making tests
         working-directory: .
         run: ci/test.sh
+      - name: Upload coverage
+        uses: codecov/codecov-action@v3
+        with:
+          token: ${{ secrets.CODE_COV_TOKEN }}
+          file: coverage.xml
+          fail_ci_if_error: true
       - name: Build package
         run: |
           mv ci/build.toml pyproject.toml

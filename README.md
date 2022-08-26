@@ -10,9 +10,9 @@ python client for &lt;selenium> driver
         <img src="https://img.shields.io/badge/Swagger-23000.svg?style=for-the-badge&logo=swagger&logoColor=white"/>
     </a>
 </p>
-<a href="https://codecov.io/gh/pychik/lightning_py" >
-<img src="https://codecov.io/gh/pychik/lightning_py/branch/master/graph/badge.svg?token=0DWA5EDO4K"/>
-</a>
+<a href="https://codecov.io/gh/pychik/lightning_py" > 
+ <img src="https://codecov.io/gh/pychik/lightning_py/branch/master/graph/badge.svg?token=0DWA5EDO4K"/> 
+ </a>
 
 * Features at the moment
   * realized in 100%
