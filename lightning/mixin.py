@@ -5,6 +5,7 @@ from lightning_adapter import ApiClient, Configuration
 if TYPE_CHECKING:
     from .windows import Windows
     from .document import Document
+    from .cookies import Cookies
     from .navigation import Navigation
     from .screenshot import Screenshot
     from .sessions import Sessions
@@ -39,6 +40,10 @@ class Common:
     @property
     def session_id(self) -> str:
         return self._wd.session_id
+
+    @property
+    def cookies(self) -> Cookies:
+        return self._wd.cookies
 
     @property
     def navigation(self) -> Navigation:
