@@ -29,7 +29,9 @@ class Navigation(Common):
         self._navi_instance.navigate_to(session_id=self.session_id, body=UrlRequest(url=url, ))
         return self
 
-
+    def refresh(self) -> Navigation:
+        self._navi_instance.refresh_page(session_id=self.session_id, body=UrlRequest(url=self.current_url))
+        return self
 
     def back(self) -> Navigation:
         """Navigates to the previous page"""
