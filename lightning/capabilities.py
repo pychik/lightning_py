@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from .exceptions import CapsException
+from .exceptions import WebDriverException
 
 
 class Capabilities(dict):
@@ -34,12 +34,12 @@ class Capabilities(dict):
                 if isinstance(arg, dict):
                     kwargs.update(arg)
                 else:
-                    raise CapsException(
+                    raise WebDriverException(
                         "Invalid positional arguments=%s passed to %s. "
                         "Use Dictionary {\'browserName\'=\'firefox\',...}" % (
                             args,
                             self.__class__.__name__,
-                        ),
+                        ), "Capability error"
                     )
 
         # converting to W3c readable settings
