@@ -24,7 +24,6 @@ class Timeouts(Common):
     @implicit_wait_timeout.setter
     def implicit_wait_timeout(self, value):
         self._timeouts.implicit = value
-        pass
 
     @property
     def page_load_timeout(self):
