@@ -25,4 +25,3 @@ class Document(Common):
         body = ScriptRequest(script=script, args=[*args])
         r = self._document_instance.execute_script(body, session_id=self.session_id)
         return r.value
-

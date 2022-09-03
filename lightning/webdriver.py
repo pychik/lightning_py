@@ -3,6 +3,7 @@ import logging as log
 from .capabilities import Capabilities
 from .windows import Windows
 from .cookies import Cookies
+from .frames import Frames
 from .document import Document
 from .navigation import Navigation
 from .screenshot import Screenshot
@@ -21,6 +22,7 @@ class WebDriver:
 
         self._sessions = Sessions(wd=self)
         self._cookies = Cookies(wd=self)
+        self._frames = Frames(wd=self)
         self._navigation = Navigation(wd=self)
         self._document = Document(wd=self)
         self._screenshot = Screenshot(wd=self)
@@ -42,6 +44,10 @@ class WebDriver:
     @property
     def cookies(self) -> Cookies:
         return self._cookies
+
+    @property
+    def frames(self) -> Frames:
+        return self._frames
 
     @property
     def document(self) -> Document:

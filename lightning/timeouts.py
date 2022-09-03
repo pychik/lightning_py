@@ -24,7 +24,6 @@ class Timeouts(Common):
     @implicit_wait_timeout.setter
     def implicit_wait_timeout(self, value):
         self._timeouts.implicit = value
-        pass
 
     @property
     def page_load_timeout(self):
@@ -44,6 +43,3 @@ class Timeouts(Common):
 
     def __repr__(self):
         return str(self.timeouts)
-# @property + @attribute.setter client.timeouts().implicit_wait_timeout
-#  @property + @attribute.setter client.timeouts().page_load_timeout
-#  @property + @attribute.setter client.timeouts().script_timeout using Optional for getter
