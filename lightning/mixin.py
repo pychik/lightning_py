@@ -6,6 +6,7 @@ if TYPE_CHECKING:
     from .windows import Windows
     from .document import Document
     from .cookies import Cookies
+    from .frames import Frames
     from .navigation import Navigation
     from .screenshot import Screenshot
     from .sessions import Sessions
@@ -44,6 +45,10 @@ class Common:
     @property
     def cookies(self) -> Cookies:
         return self._wd.cookies
+
+    @property
+    def frames(self) -> Frames:
+        return self._wd.frames
 
     @property
     def navigation(self) -> Navigation:

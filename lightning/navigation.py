@@ -25,6 +25,7 @@ class Navigation(Common):
 
     # Navigation class spec methods
     def navigate(self, url: str) -> Navigation:
+
         """ Navigates to url"""
         self._navi_instance.navigate_to(session_id=self.session_id, body=UrlRequest(url=url, ))
         return self

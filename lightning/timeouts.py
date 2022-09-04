@@ -43,6 +43,3 @@ class Timeouts(Common):
 
     def __repr__(self):
         return str(self.timeouts)
-# @property + @attribute.setter client.timeouts().implicit_wait_timeout
-#  @property + @attribute.setter client.timeouts().page_load_timeout
-#  @property + @attribute.setter client.timeouts().script_timeout using Optional for getter
