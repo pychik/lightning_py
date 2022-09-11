@@ -2,7 +2,6 @@ from __future__ import annotations
 
 from lightning_adapter.api.contexts_api import ContextsApi
 from lightning_adapter import NewWindowRequest
-from typing import Optional, Union
 from .mixin import Common
 from .window import Window
 

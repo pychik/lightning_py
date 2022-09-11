@@ -51,3 +51,4 @@ support.py
 swagger-codegen-cli.jar
 generated/
 python/
+pyproject.toml
