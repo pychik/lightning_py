@@ -22,4 +22,11 @@ def firefox_client():
         yield container.get_driver()
 
     sleep(1)
-    
+
+
+@pytest.fixture(scope='session')
+def chrome_client():
+    with SelenoidDriverContainer(capabilities=settings.Chrome.CAPABILITIES) as container:
+        yield container.get_driver()
+
+    sleep(1)
