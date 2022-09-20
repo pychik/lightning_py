@@ -16,7 +16,7 @@ def event_loop():
     loop.close()
 
 
-@pytest.fixture(scope='session')
+@pytest.fixture(scope='class')
 def firefox_client():
     with SelenoidDriverContainer(capabilities=settings.Firefox.CAPABILITIES) as container:
         yield container.get_driver()
@@ -24,7 +24,7 @@ def firefox_client():
     sleep(1)
 
 
-@pytest.fixture(scope='session')
+@pytest.fixture(scope='class')
 def chrome_client():
     with SelenoidDriverContainer(capabilities=settings.Chrome.CAPABILITIES) as container:
         yield container.get_driver()

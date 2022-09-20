@@ -17,5 +17,8 @@ class TestSetting(BaseSettings):
     class Chrome:
         CAPABILITIES = {'browserName': 'chrome', 'selenoid:options': {"enableVnc": True, "enableVideo": False}}
 
+    class TestPages:
+        PROMPTS_TEST_PAGE: str = "https://testpages.herokuapp.com/styled/alerts/alert-test.html"
+
 
 settings = TestSetting()
