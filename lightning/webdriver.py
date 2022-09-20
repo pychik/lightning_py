@@ -7,6 +7,7 @@ from .elements import Elements
 from .frames import Frames
 from .document import Document
 from .navigation import Navigation
+from .print import Print
 from .screenshot import Screenshot
 from .sessions import Sessions
 from .timeouts import Timeouts
@@ -26,6 +27,7 @@ class WebDriver:
         self._elements = Elements(wd=self)
         self._frames = Frames(wd=self)
         self._navigation = Navigation(wd=self)
+        self._print = Print(wd=self)
         self._document = Document(wd=self)
         self._screenshot = Screenshot(wd=self)
         self._windows = Windows(wd=self)
@@ -38,6 +40,10 @@ class WebDriver:
     @property
     def navigation(self) -> Navigation:
         return self._navigation
+
+    @property
+    def print(self) -> Print:
+        return self._print
 
     @property
     def sessions(self) -> Sessions:

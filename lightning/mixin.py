@@ -9,6 +9,7 @@ if TYPE_CHECKING:
     from .elements import Elements
     from .frames import Frames
     from .navigation import Navigation
+    from .print import Print
     from .screenshot import Screenshot
     from .sessions import Sessions
     from .timeouts import Timeouts
@@ -58,6 +59,10 @@ class Common:
     @property
     def navigation(self) -> Navigation:
         return self._wd.navigation
+
+    @property
+    def print(self) -> Print:
+        return self._wd.print
 
     @property
     def sessions(self) -> Sessions:
