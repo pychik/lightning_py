@@ -27,7 +27,10 @@ class SelenoidDriverContainer(DockerContainer):
     def _get_uri(self):
         ip = self.get_container_host_ip()
         port = self.get_exposed_port(self.port_to_expose)
-        return f"http://{ip}:{port}/wd/hub"
+        if self.capabilities["browserName"] == "chrome":
+            return f"http://{ip}:{port}"
+        if self.capabilities["browserName"] == "firefox":
+            return f"http://{ip}:{port}/wd/hub"
 
     def get_driver(self):
         return self._connect()

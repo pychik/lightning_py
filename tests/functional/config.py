@@ -14,5 +14,8 @@ class TestSetting(BaseSettings):
         CAPABILITIES = {'browserName': 'firefox', 'selenoid:options': {"enableVnc": True, "enableVideo": False}}
         # CAPABILITIES = Capabilities(browser_name='firefox', selenoidoptions={"enableVnc": True, "enableVideo": False})
 
+    class Chrome:
+        CAPABILITIES = {'browserName': 'chrome', 'selenoid:options': {"enableVnc": True, "enableVideo": False}}
+
 
 settings = TestSetting()
