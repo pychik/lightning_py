@@ -7,6 +7,7 @@ from .elements import Elements
 from .frames import Frames
 from .document import Document
 from .navigation import Navigation
+from .prompts import Prompts
 from .print import Print
 from .screenshot import Screenshot
 from .sessions import Sessions
@@ -27,6 +28,7 @@ class WebDriver:
         self._elements = Elements(wd=self)
         self._frames = Frames(wd=self)
         self._navigation = Navigation(wd=self)
+        self._prompts = Prompts(wd=self)
         self._print = Print(wd=self)
         self._document = Document(wd=self)
         self._screenshot = Screenshot(wd=self)
@@ -40,6 +42,10 @@ class WebDriver:
     @property
     def navigation(self) -> Navigation:
         return self._navigation
+
+    @property
+    def prompts(self) -> Prompts:
+        return self._prompts
 
     @property
     def print(self) -> Print:
